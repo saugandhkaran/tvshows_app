@@ -1,43 +1,41 @@
 <script>
-import axios from 'axios';
+import axios from "axios";
 export default {
-  data () {
+  data() {
     return {
-      api: axios.create({ baseURL: process.env.VUE_APP_SEARCH_API}),
+      api: process.env.VUE_APP_SEARCH_API,
       data: [],
       error: null,
       loading: false,
-      params: {
+      paramsObject: {
         params: {
-            q: ''
+          q: ''
         }
       }
     };
   },
   methods: {
-    async query (type, ...params) {
+    async query(params) {
       this.loading = true;
-      const response = await this.api[type](...params)
-        .catch((err) => {
-          this.error = err.response;
-        });
+      const response = await axios.get(this.api, params).catch(err => {
+        this.error = err.message;
+      });
       if (response) {
         this.data = response.data;
       }
       this.loading = false;
       return this.data;
     },
-    searchShowDetails (query) {
-      if (query) {
-        this.params.params.q = query;
-        this.query('get','', this.params);
+    async searchShowDetails(query) {
+      if (!query) {
+        return;
+      } else {
+        this.paramsObject.params.q = query;
+        this.query(this.paramsObject);
       }
     }
   },
-  mounted () {
-    this.searchShowDetails(this.params.params.query);
-  },
-  render () {
+  render() {
     return this.$scopedSlots.default({
       data: this.data,
       searchShowDetails: this.searchShowDetails,

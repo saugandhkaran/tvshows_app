@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Browse should match the Browse html 1`] = `
+<div
+  class="browse"
+>
+  <h2
+    class="flex-container center"
+  >
+    Browse from our amazing collection of TV episodes.
+  </h2>
+   
+  <div />
+</div>
+`;

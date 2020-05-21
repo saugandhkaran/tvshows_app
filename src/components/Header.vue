@@ -11,9 +11,6 @@
 <script>
 export default {
   name: 'Header',
-  props: {
-    showObject: Object,
-  }
 }
 </script>
 

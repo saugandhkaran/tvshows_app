@@ -3,7 +3,7 @@ import axios from 'axios';
 export default {
   data () {
     return {
-      api: axios.create({ baseURL: process.env.VUE_APP_MOVIE_LIST_API }),
+      api: process.env.VUE_APP_MOVIE_LIST_API,
       data: [],
       error: null,
       params: {
@@ -15,11 +15,11 @@ export default {
     };
   },
   methods: {
-    async query (type, ...params) {
+    async query (params) {
       this.loading = true;
-      const response = await this.api[type](...params)
+      const response = await axios.get(this.api, params)
         .catch((err) => {
-          this.error = err;
+          this.error = err.message;
         });
       if (response) {
         this.data = response.data;
@@ -28,7 +28,7 @@ export default {
       return;
     },
     getListOfTvShows () {
-      this.query('get','', this.params);
+      this.query(this.params);
     }
   },
   mounted () {

@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Search should match the Search html 1`] = `
+<div
+  class="search"
+>
+  <h2
+    class="flex-container center"
+  >
+    Search about your favourite shows here.
+  </h2>
+   
+  <div />
+</div>
+`;

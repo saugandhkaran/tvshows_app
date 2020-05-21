@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Home should match the Home html 1`] = `
+<div
+  class="home"
+>
+  <div
+    class="flex-container center"
+  >
+    <p>
+      Welcome to PLAYTV24x7
+    </p>
+  </div>
+   
+  <div
+    class="flex-container center"
+  >
+    <a>
+      <button
+        class="btn-secondary"
+      >
+        Search
+      </button>
+    </a>
+     
+    <a>
+      <button
+        class="btn-primary"
+      >
+        Browse
+      </button>
+    </a>
+  </div>
+</div>
+`;

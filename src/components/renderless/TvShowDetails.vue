@@ -3,7 +3,7 @@ import axios from 'axios';
 export default {
   data () {
     return {
-      api: axios.create({ baseURL: process.env.VUE_APP_MOVIE_LIST_API}),
+      api: process.env.VUE_APP_MOVIE_LIST_API,
       data: [{
         name: '',
         rating: '',
@@ -15,12 +15,15 @@ export default {
     };
   },
   props: {
-    showId: String
+    showId: {
+      type: String,
+      required: true
+    }
   },
   methods: {
-    async query (type, ...params) {
+    async query () {
       this.loading = true;
-      const response = await this.api[type](...params)
+      const response = await axios.get(`${this.api}/${this.$props.showId}`)
         .catch((err) => {
           this.error = err.message;
         });
@@ -30,12 +33,9 @@ export default {
       this.loading = false;
       return this.data;
     },
-    getShowDetails () {
-      this.query('get',`/${this.$props.showId}`, this.params);
-    }
   },
-  mounted () {
-    this.getShowDetails();
+   mounted () {
+    this.query();
   },
   render () {
     return this.$scopedSlots.default({

@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ShowDetails should match the ShowDetails html 1`] = `
+<div
+  class="show-details"
+>
+  <div />
+</div>
+`;

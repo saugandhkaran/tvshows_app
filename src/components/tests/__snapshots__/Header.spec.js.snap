@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`header should match the header html 1`] = `
+<nav
+  class="flex-container"
+>
+  <a>
+    <h2>
+      PlayTV24x7
+    </h2>
+  </a>
+   
+  <section
+    class="flex-container menu-items"
+  >
+    <a>
+      <h3>
+        Browse
+      </h3>
+    </a>
+     
+    <a>
+      <h3>
+        Search
+      </h3>
+    </a>
+  </section>
+</nav>
+`;

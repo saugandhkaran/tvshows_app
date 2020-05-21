@@ -13,22 +13,25 @@
 <script>
 export default {
   name: 'TvShowCard',
+  data: ()=> {
+    return{
+      dummyImage: 'https://dummyimage.com/210x295/1e1e1e/fff&text=No+image+available',
+    }
+  },
   props: {
-    showObject: Object,
+    showObject: {
+      type: Object,
+      required: true,
+    }
   },
   computed: {
     getMovieImage() {
-      if (this.$props.showObject.image) {
-        return this.$props.showObject.image.medium;
-      } else {
-        return 'https://dummyimage.com/210x295/1e1e1e/fff&text=No+image+available';
-      }
+        return this.showObject.image && this.showObject.image.medium ? this.showObject.image.medium: this.dummyImage;
     }
   }
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss" scoped>
 .card {
   padding-bottom: 8px;
