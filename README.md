@@ -5,10 +5,10 @@ Tvshow_app is a responsive webapp which helps to browse Tv shows worldwide based
 NodeJS
 
 ## Dependencies and frameworks used
-VueJS 2.6.11 (stable)
-Axios 0.19.2
-VueRouter 3.1.6
-Linting - Done in dev IDE
+- VueJS 2.6.11 (stable)
+- Axios 0.19.2
+- VueRouter 3.1.6
+- Linting - Done in dev IDE
 
 ## Project setup
 For development:
@@ -27,11 +27,6 @@ Jest is used to write the unit tests
 ```
 npm run test
 ```
-
-## Dependencies and frameworks used
-VueJS 2.6.11 (stable)
-Axios 0.19.2
-VueRouter 3.1.6
 
 ## Naming convention
 For Vue files - Pascal casing
