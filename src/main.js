@@ -1,8 +1,7 @@
 import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
-import './filters'
-import './registerServiceWorker'
+import './filters/filterShowsOnGenre'
 
 Vue.config.productionTip = false
 

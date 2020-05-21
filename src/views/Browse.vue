@@ -6,7 +6,7 @@
         <div v-for="genre in definedGenres" :key="genre.genre" class="flex-container column">
           <h2 class="flex-container">{{genre.label}} TV</h2>
           <section class="flex-container section overflow-x">
-            <tv-show-card v-for="show in $options.filters.returnGenreTvShows(TvShowList,genre.genre)" :key="show.id" :showObject="show" @click.native="goToShowDetailsPage(show.id)"></tv-show-card>
+            <tv-show-card v-for="show in $options.filters.filterShowsOnGenre(TvShowList,genre.genre)" :key="show.id" :showObject="show" @click.native="goToShowDetailsPage(show.id)"></tv-show-card>
           </section>
           <h4 class="flex-container center" v-if="loading">Loading results ...</h4>
           <h4 class="flex-container error center" v-if="error">Something went wrong</h4>

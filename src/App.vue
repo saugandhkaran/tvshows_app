@@ -97,6 +97,10 @@ p {
   &.overflow-x {
     flex-wrap: nowrap;
     overflow: scroll;
+    -ms-overflow-style: none;
+    &::-webkit-scrollbar {
+      display: none;
+    }
   }
   &.section {
     max-width: 100%;

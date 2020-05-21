@@ -1,6 +1,6 @@
 import Vue from 'vue'
 
-Vue.filter('returnGenreTvShows', function (value, genre) {
+Vue.filter('filterShowsOnGenre', function (value, genre) {
   if (value.length) {
     return value.filter((show) => {
       return show.genres.some(g => g === genre);
