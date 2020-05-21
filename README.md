@@ -29,6 +29,6 @@ npm run test
 ```
 
 ## Naming convention
-For Vue files - Pascal casing
-For Js files - Camel casing
-For test - Pascal casing and ends with .spec.js
+- For Vue files - Pascal casing
+- For Js files - Camel casing
+- For test - Pascal casing and ends with .spec.js
